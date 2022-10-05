@@ -1,0 +1,259 @@
+<script
+src="https://code.jquery.com/jquery-3.6.0.min.js" ></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/tinycolor/1.4.1/tinycolor.min.js'></script>
+<link href="https://cdn.jsdelivr.net/gh/hung1001/font-awesome-pro@4cac1a6/css/all.css" rel="stylesheet" type="text/css" />
+ 
+<link rel="stylesheet" href="style.css">
+ 
+
+<div class="main" style="display:none;">
+     
+    <div class="header">
+       <h1 id="name">Market Name</h1>
+       <div class="mon">
+        <span id="wallet">100.000 $</span>
+        <i class="fad fa-wallet"></i>
+       </div>
+       <div class="mon">
+        <span id="bank">100.000 $</span>
+        <i class="fad fa-credit-card"></i>
+       </div>
+    </div>
+
+    <div class="market">
+        <div class="left">
+           <h1>Categories</h1>
+           <div id="cats">
+           <button class="btn active"> 
+            <table>
+                <tr>
+                  <td class="b"><i class="fad fa-shopping-cart"></i>  </td> 
+                  <td class="i">Main Shop</td>
+                </tr>
+              </table>
+           </button>
+           <button class="btn">
+            <table>
+              <tr>
+                <td class="b"><i class="fad fa-glass"></i></td> 
+                <td class="i">Drinks</td>
+              </tr>
+            </table>
+           </button>
+           <button class="btn">
+            <table>
+              <tr>
+                <td class="b"><i class="fad fa-glass"></i></td> 
+                <td class="i">Drinks</td>
+              </tr>
+            </table>
+           </button>
+        </div>
+            
+        </div>
+        <div class="right">
+             
+        </div>
+    </div>
+
+</div>
+
+ 
+
+<div class="buyShop">
+ <span class="a">Business benefits</span>
+  <div class="ic">
+    <i class="fad fa-truck-loading"></i>
+    <span>Create the trade network</span> 
+  </div>
+  <div class="ic">
+    <i class="fad fa-cut"></i>
+    <span>Seize tax discount opportunities</span> 
+  </div>
+  <div class="ic">
+    <i class="fad fa-caravan"></i>
+    <span>use as a front company</span> 
+  </div>
+
+  <button class="buyShopbtn"></button>
+</div>
+
+<div class="manageShop" style="display: none;">
+ <div class="_left">
+   <div class="u">
+     <div class="head"><i class="fad fa-shopping-bag"></i> Main Shop </div>
+     
+     <div class="form">
+       <span>Shop Name</span><br>
+       <input type="text" id="shopname" placeholder="Shop display name" />
+     </div>
+     <div class="form">
+      <span>Transfer fee</span><br>
+      <input type="text" id="shop_transfer_fee" />
+      <p>If you set 0 (zero), it cannot be transferred.</p>
+    </div>
+    <div class="form">
+      <span>Shop Marker</span><br>
+      <input type="text" id="marker" placeholder="0-43 between" />
+    </div>
+    <div class="form">
+      <span>Marker Y axis</span><br>
+      <input type="text" id="markerY" data-a="false" placeholder="0.1-0.9 (+ / -) between" />
+    </div>
+
+    <div class="form">
+      <span>Lock</span><br>
+      <label class="switch">
+        <input type="checkbox" id="lock">
+        <span class="slider round"></span>
+      </label>
+      <p>You can lock your shop.</p>
+    </div>
+
+    <div class="form">
+      <span>Shop List</span><br>
+      <label class="switch">
+        <input type="checkbox" id="enableShopList">
+        <span class="slider round"></span>
+      </label>
+      <p>Combines your market into a single marker.</p>
+    </div>
+    <div class="form">
+      <span>Marker Color</span><br>
+      <div class="renk"></div>
+      <p>Change your shop marker color.</p>
+    </div>
+    <div class="form">
+      <span>Other</span><br>
+      <button class="changethemebtn" ><i class="fad fa-brush"></i> Change Shop Theme</button>
+ 
+      <button class="shopv" ><i class="fad fa-briefcase"></i> Shop vault</button>
+    </div>
+
+    <div class="colorpicker"></div>
+    
+
+    <button class="updatebtn" ><i class="fad fa-pen-square"></i> Update Shop</button>
+   </div>
+   <div class="u" style="height: 30%; border-radius: 20px;">
+    <div class="head"><i class="fad fa-shopping-bag"></i> Add Item </div>
+    <div class="form">
+      <span>Sell Price</span><br>
+      <input type="number" id="sellprice" placeholder="Sell Price" />
+    </div>
+    <div class="form">
+      <span>Buy Price</span><br>
+      <input type="number" id="buyprice" placeholder="Buy Price" />
+    </div>
+    <div class="form">
+      <span>Categories</span><br>
+      <select id="category" >
+        <option value="loading">Loading...</option>
+      </select>
+      
+    </div>
+    <div class="form">
+      <span>Items</span><br>
+      <select id="solditems" >
+        <option value="loading">Loading...</option>
+      </select>
+    </div>
+
+    <button class="btnbtn" id="selectitem" style="width: unset;display:none;position: absolute;top: 50%;"  ><i class="fad fa-plus"></i></button>
+     
+
+  </div>
+ </div>
+ <div class="_right">
+  
+   <div class="manageinventory">
+    <div class="head"><i class="fad fa-shopping-bag"></i> Shop inventory </div>
+    <div class="shopinvlist">
+      
+      <!-- <div class="itemkutu">
+        <img src="//qb-inventory/html/images/bread.png" style="width: 50px;float: left;" />
+        <p style="float: left;">Bread</p>
+       Buy:  <input type="number"/>
+       Sell: <input type="number"/>
+        <button class="btnbtn red" ><i class="fad fa-trash"></i></button>
+        <button class="btnbtn" ><i class="fad fa-sync"></i></button>
+        
+ 
+       </div> -->
+      
+      
+
+    </div>
+    </div>
+   </div>
+
+   <div class="themeselector"> 
+        <h1>Select Your Shop Theme</h1>
+        <div class="tm akt" data-theme="0">
+          <img src="img/0.png"  />
+        </div>
+        <div class="tm" data-theme="1">
+          <img src="img/1.png"  />
+        </div>
+        <div class="tm" data-theme="2">
+          <img src="img/2.png"  />
+        </div>
+        <div class="tm" data-theme="3">
+          <img src="img/3.png"  />
+        </div>
+        <div class="tm" data-theme="4">
+          <img src="img/4.png"  />
+        </div>
+        <div class="tm" data-theme="5">
+          <img src="img/5.png"  />
+        </div>
+        <button class="backbtn">Go Back <i class="fad fa-arrow-right"></i></button>
+   </div>
+
+   <div class="itemselector"> 
+    <h1>After selecting the item will be added.</h1>
+    <button class="backbtn">Go Back <i class="fad fa-arrow-right"></i></button>
+
+  </div>
+
+   <div class="shopvault" style="text-align: center;"> 
+    <h1>Shop Vault</h1>
+    <br>
+    <h1><i class="fad fa-cash-register"></i>&nbsp;Total cash: <span id="vaultcash" style="color: green;">1000$</span></h1>
+    <br>
+    <input id="vax" class="shopval g" type="number" value="0" /><br><br>
+
+    <button class="btnbtn" id="removebalancefrombank">Withdraw To Bank</button><br><br>
+     <h1><i class="fad fa-university"></i>&nbsp;Bank: <span id="bankacc" style="color: green;">1000$</span></h1>
+    <br>
+    <input id="vax" class="bankval g" type="number" value="0" /><br><br>
+    <button class="btnbtn" id="addbalancefrombank">Add Balance From Bank</button><br><br>
+    <button class="backbtn">Go Back <i class="fad fa-arrow-right"></i></button>
+    <br>
+    <p style="color: white;font-family: mainfont;">If there is not enough money in the market counter, customers cannot sell products, they can only buy.</p>
+   </div>
+   
+</div>
+
+
+<div class="mininotify">
+
+</div>
+
+<div class="notifManager">
+  
+</div>
+
+
+
+<script src="index.js"></script>
+
+
+ 
+
+
+<div class="theme">
+  
+ 
+</div>
+ 
